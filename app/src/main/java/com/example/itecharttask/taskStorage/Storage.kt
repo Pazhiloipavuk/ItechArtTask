@@ -10,7 +10,9 @@ class Storage {
     fun getAllTasks() = realm.where(Task::class.java).findAll()!!
 
     fun deleteTask(task: Task) {
+        realm.beginTransaction()
         task.deleteFromRealm()
+        realm.commitTransaction()
     }
 
     fun addTask(task: Task) {

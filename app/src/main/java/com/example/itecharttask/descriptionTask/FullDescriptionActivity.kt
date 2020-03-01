@@ -29,7 +29,7 @@ class FullDescriptionActivity : AppCompatActivity(), FullDescriptionView {
 
     private fun initAllListeners() {
         btnSave.setOnClickListener{
-            var task = Task()
+            val task = Task()
             task.id = id
             task.title = edtTitle.text.toString()
             task.date = edtDate.text.toString()
@@ -38,7 +38,7 @@ class FullDescriptionActivity : AppCompatActivity(), FullDescriptionView {
         }
 
         btnDelete.setOnClickListener {
-
+            presenter.deleteTask(id)
         }
     }
 

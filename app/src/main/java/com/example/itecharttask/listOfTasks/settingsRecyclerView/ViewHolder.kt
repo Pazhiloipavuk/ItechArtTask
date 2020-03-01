@@ -3,6 +3,7 @@ package com.example.itecharttask.listOfTasks.settingsRecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.example.itecharttask.R
 import com.example.itecharttask.model.Task
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
@@ -20,7 +21,14 @@ class ViewHolder(view: View, private var clickTask: PublishSubject<Task>,
     private fun showTask(item: Task) {
         itemView.txtVTitle.text = item.title
         itemView.txtVDate.text = item.date
-        itemView.txtVStatus.text = item.status.toString()
+        if (item.status) {
+            itemView.txtVStatus.text = "done"
+            itemView.checkBoxSwitchStatus.isChecked = true
+        }
+        else {
+            itemView.txtVStatus.text = "undone"
+            itemView.checkBoxSwitchStatus.isChecked = false
+        }
         itemView.txtVDescription.text = item.description
     }
 

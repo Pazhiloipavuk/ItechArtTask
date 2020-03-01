@@ -8,8 +8,10 @@ import com.example.itecharttask.model.Task
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 
-class ListAdapter(private var items: List<Task>) :
+class ListAdapter(items: List<Task>) :
     RecyclerView.Adapter<ViewHolder>() {
+
+    var items = ArrayList(items)
 
     private val clickTask = PublishSubject.create<Task>()
     val clickEventTask: Observable<Task> = clickTask
@@ -36,5 +38,17 @@ class ListAdapter(private var items: List<Task>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(items[position])
+    }
+
+    fun changeItem(oldItem: Task, newItem: Task) {
+        val index = items.indexOf(oldItem)
+        items[index] = newItem
+        notifyItemChanged(index)
+    }
+
+    fun updateListOfItems(listOfTasks: List<Task>) {
+        items.clear()
+        items.addAll(listOfTasks)
+        notifyDataSetChanged()
     }
 }

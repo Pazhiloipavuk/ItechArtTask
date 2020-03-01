@@ -13,4 +13,8 @@ class FullDescriptionPresenter(activity: FullDescriptionView) {
     }
 
     fun findTaskById(id: Int) = storage.findTask(id)
+
+    fun deleteTask(id: Int) {
+        storage.deleteTask(findTaskById(id))
+    }
 }

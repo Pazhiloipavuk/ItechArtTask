@@ -33,6 +33,14 @@ class ListOfTasksPresenter(private val activity: ListOfTasksView) {
             if (it.status) println("false")
             else println("true")
             println("-------------------------------")
+            val newTask = Task ()
+            newTask.id = it.id
+            newTask.title = it.title
+            newTask.date = it.date
+            newTask.description = it.description
+            newTask.status = !it.status
+            storage.updateTask(newTask)
+            activity.changeTask(it, newTask)
         }
     }
 }
