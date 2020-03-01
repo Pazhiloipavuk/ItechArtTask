@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vRvTasks"
+        android:layout_width="match_parent"
+        android:layout_weight="10"
+        android:layout_gravity="top"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/linLt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnFilter"
+            style="@style/MyButtons"
+            android:layout_weight="1"
+            android:text="@string/filter"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            style="@style/MyButtons"
+            android:layout_weight="1"
+            android:text="@string/add"/>
+    </LinearLayout>
+
+</LinearLayout>
