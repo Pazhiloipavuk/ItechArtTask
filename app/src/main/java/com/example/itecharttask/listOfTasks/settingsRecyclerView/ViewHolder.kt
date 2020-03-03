@@ -19,8 +19,11 @@ class ViewHolder(view: View, private var clickTask: PublishSubject<Task>,
     }
 
     private fun showTask(item: Task) {
+        println("Start")
         itemView.txtVTitle.text = item.title
+        println("Start1")
         itemView.txtVDate.text = item.date
+        println("Start2")
         if (item.status) {
             itemView.txtVStatus.text = "done"
             itemView.checkBoxSwitchStatus.isChecked = true
@@ -29,6 +32,7 @@ class ViewHolder(view: View, private var clickTask: PublishSubject<Task>,
             itemView.txtVStatus.text = "undone"
             itemView.checkBoxSwitchStatus.isChecked = false
         }
+        println("Start3")
         itemView.txtVDescription.text = item.description
     }
 
