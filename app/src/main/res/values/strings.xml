@@ -6,6 +6,7 @@
     <string name="delete">Delete</string>
     <string name="title">Title</string>
     <string name="date">Date</string>
+    <string name="description_txt">Description:</string>
     <string name="description">Description</string>
     <string name="save_complete">Save complete!</string>
     <string name="delete_complete">Delete complete!</string>

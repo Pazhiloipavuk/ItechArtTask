@@ -2,6 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     android:gravity="center">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -21,13 +22,11 @@
         <Button
             android:id="@+id/btnFilter"
             style="@style/MyButtons"
-            android:layout_weight="1"
             android:text="@string/filter"/>
 
         <Button
             android:id="@+id/btnAdd"
             style="@style/MyButtons"
-            android:layout_weight="1"
             android:text="@string/add"/>
     </LinearLayout>
 

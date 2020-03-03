@@ -31,7 +31,7 @@ class ListOfTasksActivity : AppCompatActivity(),
 
     private fun initRecyclerview() {
         vRvTasks.layoutManager = LinearLayoutManager(this)
-        myAdapter = myAdapter(presenter.getAllTasks())
+        myAdapter = myAdapter(presenter.getAllTasksFromDB())
         vRvTasks.adapter = myAdapter
         presenter.initRecyclerviewListeners(myAdapter.clickEventTask, myAdapter.clickEventCheckBox)
     }
@@ -57,7 +57,7 @@ class ListOfTasksActivity : AppCompatActivity(),
                 2 -> showAlertDialogDescribe()
                 3 -> {
                     presenter.setDefaultSettings()
-                    myAdapter.updateListOfItems(presenter.getTasks())
+                    myAdapter.updateListOfItems(presenter.getAllTasks())
                 }
             }
         }
@@ -70,8 +70,14 @@ class ListOfTasksActivity : AppCompatActivity(),
         alertDialogBuilder.setCancelable(true)
         alertDialogBuilder.setItems(R.array.filter_status) { _, which  ->
             when (which) {
-                0 -> myAdapter.updateListOfItems(presenter.filterByStatus(true))
-                1 -> myAdapter.updateListOfItems(presenter.filterByStatus(false))
+                0 -> {
+                    presenter.setStatus(true)
+                    myAdapter.updateListOfItems(presenter.filterTask())
+                }
+                1 -> {
+                    presenter.setStatus(false)
+                    myAdapter.updateListOfItems(presenter.filterTask())
+                }
             }
         }
         alertDialogBuilder.show()
@@ -84,7 +90,8 @@ class ListOfTasksActivity : AppCompatActivity(),
         val myEditText = EditText(this)
         alertDialogBuilder.setView(myEditText)
         alertDialogBuilder.setNeutralButton(android.R.string.yes) { _, _ ->
-            myAdapter.updateListOfItems(presenter.filterByTitle(myEditText.text.toString()))
+            presenter.setTitle(myEditText.text.toString())
+            myAdapter.updateListOfItems(presenter.filterTask())
         }
         alertDialogBuilder.show()
     }
@@ -96,7 +103,8 @@ class ListOfTasksActivity : AppCompatActivity(),
         val myEditText = EditText(this)
         alertDialogBuilder.setView(myEditText)
         alertDialogBuilder.setNeutralButton(android.R.string.yes) { _, _ ->
-            myAdapter.updateListOfItems(presenter.filterByDescribe(myEditText.text.toString()))
+            presenter.setDescription(myEditText.text.toString())
+            myAdapter.updateListOfItems(presenter.filterTask())
         }
         alertDialogBuilder.show()
     }
@@ -113,6 +121,6 @@ class ListOfTasksActivity : AppCompatActivity(),
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == 1) myAdapter.updateListOfItems(presenter.getAllTasks())
+        if (resultCode == 1) myAdapter.updateListOfItems(presenter.getAllTasksFromDB())
     }
 }

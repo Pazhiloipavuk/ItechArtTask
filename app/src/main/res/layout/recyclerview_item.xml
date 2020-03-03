@@ -2,10 +2,10 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="80dp"
     android:orientation="horizontal"
     android:layout_margin="10dp"
-    android:background="@drawable/full_border">
+    android:background="@drawable/my_liner_layout">
 
     <CheckBox
         android:id="@+id/checkBoxSwitchStatus"
@@ -14,89 +14,13 @@
         android:layout_gravity="center"
         android:gravity="center"/>
 
-    <LinearLayout
-        android:id="@+id/linLtTask"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txtVTitle"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@drawable/left_border">
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"/>
 
-        <LinearLayout
-            android:id="@+id/linLtTask1"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:background="@drawable/bottom_border">
-
-            <TextView
-                android:id="@+id/txtVTitleText"
-                android:layout_height="match_parent"
-                android:layout_width="60dp"
-                android:gravity="center_vertical"
-                android:padding="5dp"
-                android:text="@string/title_txt"/>
-
-            <TextView
-                android:id="@+id/txtVTitle"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:gravity="center_vertical"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linLtTask2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:background="@drawable/bottom_border">
-
-            <TextView
-                android:id="@+id/txtVDateText"
-                android:layout_height="match_parent"
-                android:layout_width="60dp"
-                android:gravity="center_vertical"
-                android:padding="5dp"
-                android:text="@string/date_txt"/>
-
-            <TextView
-                android:id="@+id/txtVDate"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:gravity="center_vertical"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linLtTask3"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:background="@drawable/bottom_border">
-
-            <TextView
-                android:id="@+id/txtVStatusText"
-                android:layout_height="match_parent"
-                android:layout_width="60dp"
-                android:gravity="center_vertical"
-                android:padding="5dp"
-                android:text="@string/status_txt"/>
-
-            <TextView
-                android:id="@+id/txtVStatus"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:gravity="center_vertical"/>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/txtVDescription"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="5dp"
-            android:gravity="center_vertical"/>
-
-    </LinearLayout>
 
 </LinearLayout>
