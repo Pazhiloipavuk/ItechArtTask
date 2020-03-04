@@ -1,12 +1,9 @@
 package com.example.itecharttask.listOfTasks.settingsRecyclerView
 
 import android.graphics.Paint
-import android.view.LayoutInflater
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.itecharttask.R
 import com.example.itecharttask.model.Task
-import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
@@ -20,19 +17,19 @@ class ViewHolder(view: View, private var clickTask: PublishSubject<Task>,
     }
 
     private fun showTask(item: Task) {
-        itemView.txtVTitle.text = item.title
+        itemView.txtTitleItemRecyclerview.text = item.title
         if (item.status) {
             itemView.checkBoxSwitchStatus.isChecked = true
-            itemView.txtVTitle.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+            itemView.txtTitleItemRecyclerview.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
         }
         else {
             itemView.checkBoxSwitchStatus.isChecked = false
-            itemView.txtVTitle.paintFlags = 0
+            itemView.txtTitleItemRecyclerview.paintFlags = 0
         }
     }
 
     private fun setOnClickListener(item: Task) {
-        itemView.txtVTitle.setOnClickListener {
+        itemView.txtTitleItemRecyclerview.setOnClickListener {
             clickTask.onNext(item)
         }
 

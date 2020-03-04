@@ -19,7 +19,6 @@ class FullDescriptionActivity : AppCompatActivity(), FullDescriptionView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //presenter = FullDescriptionPresenter(this)
         id = intent.extras?.getInt("task")!!
         if (id == -1) {
             setContentView(R.layout.activity_add_task)

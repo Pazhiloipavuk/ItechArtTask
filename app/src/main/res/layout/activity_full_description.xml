@@ -8,7 +8,7 @@
     tools:context=".descriptionTask.FullDescriptionActivity">
 
     <LinearLayout
-        android:id="@+id/linLtSecond"
+        android:id="@+id/linLtSecondPageDateAndStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -34,7 +34,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linLtSecond1"
+        android:id="@+id/linLtSecondPageTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -61,14 +61,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linLtSecond2"
+        android:id="@+id/linLtSecondPageDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_weight="20">
 
         <TextView
-            android:id="@+id/txtDescribe"
+            android:id="@+id/txtDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -89,7 +89,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linLtSecondPage"
+        android:id="@+id/linLtSecondPageButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
